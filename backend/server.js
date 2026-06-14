@@ -83,7 +83,7 @@ app.get('/api/health', (req, res) => {
 });
 
 // Catch-all: serve React app for any non-API route (SPA support)
-app.get('*', (req, res) => {
+app.get('/*splat', (req, res) => {
   res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
 });
 
