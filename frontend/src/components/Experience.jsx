@@ -12,11 +12,11 @@ const Experience = () => {
             <div className="timeline-content glass-panel">
               <div className="timeline-header">
                 <div>
-                  <span className="timeline-badge">Present</span>
-                  <h3 className="timeline-title">Software Developer</h3>
+                  <span className="timeline-badge">Past Role</span>
+                  <h3 className="timeline-title">Jr. MERN Stack Developer</h3>
                   <span className="timeline-company">Barodaweb</span>
                 </div>
-                <span className="timeline-date">Present</span>
+                <span className="timeline-date">April 2026 - July 2026</span>
               </div>
               <div className="timeline-description">
                 <p>Architecting and developing scalable web applications using React.js, JavaScript, Express, Node and modern frontend technologies. Building responsive user interfaces, RESTful APIs, and dynamic business solutions with a focus on performance, maintainability, and user experience.</p>
@@ -24,26 +24,6 @@ const Experience = () => {
             </div>
           </div>
 
-          <div className="timeline-item reveal">
-            <div className="timeline-dot"></div>
-            <div className="timeline-content glass-panel">
-              <div className="timeline-header">
-                <div>
-                  <span className="timeline-badge">Past Role</span>
-                  <h3 className="timeline-title">Full Stack Engineer Intern</h3>
-                  <span className="timeline-company">Turamac AI</span>
-                </div>
-                <span className="timeline-date">Jan 2026 - April 2026</span>
-              </div>
-              <div className="timeline-description">
-                <p>Implemented customizable analytics dashboards utilizing Node.js backend nodes, Express API routers, and Postgres databases.</p>
-                <ul>
-                  <li>Constructed scalable real-time notification modules with WebSockets.</li>
-                  <li>Integrated Stripe Checkout flows and recurring billing subscriptions.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
 
           <div className="timeline-item reveal">
             <div className="timeline-dot"></div>

@@ -11,7 +11,7 @@ const About = () => {
             <h3 className="timeline-title">Who am I?</h3>
             <br />
             <p>
-              I'm a passionate software developer and designer based in Baroda. With 6 months of professional experience, I engineer pixel-perfect interactive web apps that aren't just fast, but delightful to use.
+              I'm a passionate software developer and designer based in Baroda. With 4 months of professional experience, I engineer pixel-perfect interactive web apps that aren't just fast, but delightful to use.
             </p>
             <p>
               My approach focuses on creating robust systems using clean code while prioritizing responsive layouts and aesthetic micro-interactions.
@@ -40,6 +40,8 @@ const About = () => {
                   <span className="skill-pill"><i className="fa-brands fa-node-js" style={{ color: '#68a063' }}></i> Node.js</span>
                   <span className="skill-pill"><i className="fa-solid fa-server"></i> Express API</span>
                   <span className="skill-pill"><i className="fa-solid fa-database" style={{ color: '#4db33d' }}></i> MongoDB</span>
+                  <span className="skill-pill"><i className="fa-solid fa-plug"></i> Socket</span>
+                  <span className="skill-pill"><i className="fa-solid fa-rocket"></i> Antigravity</span>
                 </div>
               </div>
 

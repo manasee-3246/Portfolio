@@ -54,52 +54,7 @@ const Projects = () => {
       `,
       category: 'webapp'
     },
-    'job-portal': {
-      title: "Job Portal Application",
-      tags: ["Hiring Marketplace", "Resume Indexer", "React"],
-      icon: "fa-briefcase",
-      color: "#4cc9f0",
-      description: `
-          <p>The <strong>Job Portal Application</strong> is a premium employment marketplace connecting top-tier candidates with leading tech companies. It features an advanced resume parsing engine and algorithmic candidate matching.</p>
-          <h4>Core Challenges Faced</h4>
-          <ul>
-              <li>Optimizing candidate indexing queries across thousands of resume text payloads.</li>
-              <li>Building a secure, scalable role-based access control (RBAC) system for recruiters and applicants.</li>
-          </ul>
-          <h4>Key Features</h4>
-          <ul>
-              <li>Automated resume matching using indexing engines.</li>
-              <li>Recruiter dashboard with application tracking systems (ATS).</li>
-              <li>Transaction-based premium job posting packages.</li>
-          </ul>
-          <h4>Tools Used</h4>
-          <p>React, Redux, Node.js, PostgreSQL, ElasticSearch, AWS S3.</p>
-      `,
-      category: 'webapp'
-    },
-    'farmers-trade': {
-      title: "Farmer's Trade",
-      tags: ["B2B E-Commerce", "Auction Marketplace", "Vanilla JS"],
-      icon: "fa-leaf",
-      color: "#aacc00",
-      description: `
-          <p><strong>Farmer's Trade</strong> is an organic D2C and wholesale B2B marketplace designed to bridge the gap between rural farmers and urban consumers/businesses. It cuts out the middleman to ensure fair pricing and fresh produce delivery.</p>
-          <h4>Core Challenges Faced</h4>
-          <ul>
-              <li>Designing an intuitive interface accessible for rural users with low digital literacy.</li>
-              <li>Implementing a robust real-time bidding system for wholesale agricultural auctions.</li>
-          </ul>
-          <h4>Key Features</h4>
-          <ul>
-              <li>Direct-to-consumer organic produce storefronts.</li>
-              <li>Wholesale B2B auction marketplace with real-time bidding.</li>
-              <li>Integrated logistics and harvest tracking.</li>
-          </ul>
-          <h4>Tools Used</h4>
-          <p>Vanilla JS, HTML5, CSS3, Firebase Realtime Database, Stripe Connect.</p>
-      `,
-      category: 'webapp'
-    },
+
     'student-directory': {
       title: "Student Directory",
       tags: ["Web Application", "Data Management", "Admin Dashboard"],
@@ -117,6 +72,44 @@ const Projects = () => {
               <li>Organized Student Information Dashboard</li>
               <li>Real-Time Data Updates</li>
           </ul>
+      `,
+      category: 'webapp'
+    },
+    'hospital-management': {
+      title: "Hospital Management System",
+      tags: ["Healthcare", "Automated IVR", "Dynamic Management"],
+      icon: "fa-hospital",
+      color: "#00b4d8",
+      description: `
+          <p><strong>Hospital Management System</strong> is a dynamic healthcare platform designed to efficiently manage doctor and patient records. It streamlines hospital operations and introduces an innovative automated appointment booking system.</p>
+          <h4>Key Features</h4>
+          <ul>
+              <li>Dynamic management of doctor and patient details.</li>
+              <li>Automated IVR (Interactive Voice Response) call system for patients.</li>
+              <li>Frictionless appointment booking by simply pressing a single digit during the automated call.</li>
+              <li>Centralized dashboard for hospital administrators.</li>
+          </ul>
+          <h4>Tools Used</h4>
+          <p>React, Node.js, Express, MongoDB, Exotel (for automated calls/IVR).</p>
+      `,
+      category: 'webapp'
+    },
+    'matrimony-platform': {
+      title: "Matrimony Platform",
+      tags: ["Matchmaking", "Dynamic Profiles", "Web Application"],
+      icon: "fa-ring",
+      color: "#f72585",
+      description: `
+          <p><strong>Matrimony Platform</strong> is a comprehensive matchmaking web application designed to connect individuals looking for life partners. It features a robust dynamic profile management system allowing users to update, search, and manage member details seamlessly.</p>
+          <h4>Key Features</h4>
+          <ul>
+              <li>Dynamic and comprehensive management of member details and profiles.</li>
+              <li>Advanced search algorithms based on preferences, caste, and profession.</li>
+              <li>Secure user authentication and privacy controls.</li>
+              <li>Admin dashboard to oversee and moderate user accounts.</li>
+          </ul>
+          <h4>Tools Used</h4>
+          <p>React, Node.js, Express, MongoDB.</p>
       `,
       category: 'webapp'
     }
@@ -200,60 +193,6 @@ const Projects = () => {
               </div>
             </div>
 
-            {/* Job Portal */}
-            <div className={`project-card glass-panel reveal delay-200 ${filter !== 'all' && filter !== 'webapp' ? 'hide' : ''}`}>
-              <div className="project-image-container">
-                <div className="css-mockup css-mockup-jobs">
-                  <div className="mockup-inner">
-                    <i className="fa-solid fa-briefcase" style={{ color: '#4cc9f0', filter: 'drop-shadow(0 0 15px rgba(76, 201, 240, 0.6))' }}></i>
-                    <h3>Job Portal Application</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card-details">
-                <div>
-                  <div className="project-tags">
-                    <span className="project-tag">Job Board</span>
-                    <span className="project-tag">Hiring Marketplace</span>
-                  </div>
-                  <h3 className="timeline-title">Job Portal Application</h3>
-                  <p>A high-performance job marketplace offering transaction-based job packages, resume matching engines, recruiter dashboards.</p>
-                </div>
-                <div className="project-card-footer">
-                  <button className="project-view-more" onClick={() => openModal('job-portal')}>
-                    Details <i className="fa-solid fa-arrow-right-long"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Farmers Trade */}
-            <div className={`project-card glass-panel reveal delay-300 ${filter !== 'all' && filter !== 'webapp' ? 'hide' : ''}`}>
-              <div className="project-image-container">
-                <div className="css-mockup css-mockup-farmers">
-                  <div className="mockup-inner">
-                    <i className="fa-solid fa-leaf" style={{ color: '#aacc00', filter: 'drop-shadow(0 0 15px rgba(170, 204, 0, 0.6))' }}></i>
-                    <h3>Farmer's Trade</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="project-card-details">
-                <div>
-                  <div className="project-tags">
-                    <span className="project-tag">B2B Agri-Trade</span>
-                    <span className="project-tag">D2C Marketplace</span>
-                  </div>
-                  <h3 className="timeline-title">Farmer's Trade</h3>
-                  <p>An organic agricultural e-commerce platform facilitating direct transactions between farmers and wholesale buyers.</p>
-                </div>
-                <div className="project-card-footer">
-                  <button className="project-view-more" onClick={() => openModal('farmers-trade')}>
-                    Details <i className="fa-solid fa-arrow-right-long"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-
             {/* Student Directory */}
             <div className={`project-card glass-panel reveal delay-400 ${filter !== 'all' && filter !== 'webapp' ? 'hide' : ''}`}>
               <div className="project-image-container">
@@ -275,6 +214,60 @@ const Projects = () => {
                 </div>
                 <div className="project-card-footer">
                   <button className="project-view-more" onClick={() => openModal('student-directory')}>
+                    Details <i className="fa-solid fa-arrow-right-long"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Hospital Management */}
+            <div className={`project-card glass-panel reveal delay-200 ${filter !== 'all' && filter !== 'webapp' ? 'hide' : ''}`}>
+              <div className="project-image-container">
+                <div className="css-mockup css-mockup-hospital">
+                  <div className="mockup-inner">
+                    <i className="fa-solid fa-hospital" style={{ color: '#00b4d8', filter: 'drop-shadow(0 0 15px rgba(0, 180, 216, 0.6))' }}></i>
+                    <h3>Hospital Management</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="project-card-details">
+                <div>
+                  <div className="project-tags">
+                    <span className="project-tag">Healthcare</span>
+                    <span className="project-tag">Automated IVR</span>
+                  </div>
+                  <h3 className="timeline-title">Hospital Management System</h3>
+                  <p>A dynamic platform for managing doctor and patient records, featuring a seamless one-touch automated call appointment booking system.</p>
+                </div>
+                <div className="project-card-footer">
+                  <button className="project-view-more" onClick={() => openModal('hospital-management')}>
+                    Details <i className="fa-solid fa-arrow-right-long"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Matrimony Platform */}
+            <div className={`project-card glass-panel reveal delay-300 ${filter !== 'all' && filter !== 'webapp' ? 'hide' : ''}`}>
+              <div className="project-image-container">
+                <div className="css-mockup css-mockup-matrimony">
+                  <div className="mockup-inner">
+                    <i className="fa-solid fa-ring" style={{ color: '#f72585', filter: 'drop-shadow(0 0 15px rgba(247, 37, 133, 0.6))' }}></i>
+                    <h3>Matrimony Platform</h3>
+                  </div>
+                </div>
+              </div>
+              <div className="project-card-details">
+                <div>
+                  <div className="project-tags">
+                    <span className="project-tag">Matchmaking</span>
+                    <span className="project-tag">Dynamic Profiles</span>
+                  </div>
+                  <h3 className="timeline-title">Matrimony Platform</h3>
+                  <p>A comprehensive matchmaking application featuring dynamic management of member details, advanced search, and secure profiles.</p>
+                </div>
+                <div className="project-card-footer">
+                  <button className="project-view-more" onClick={() => openModal('matrimony-platform')}>
                     Details <i className="fa-solid fa-arrow-right-long"></i>
                   </button>
                 </div>

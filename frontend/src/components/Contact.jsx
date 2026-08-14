@@ -1,6 +1,48 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [status, setStatus] = useState({ type: '', message: '' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setStatus({ type: '', message: '' });
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus({ type: 'success', message: 'Message sent successfully!' });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        setStatus({ type: 'error', message: data.error || 'Failed to send message.' });
+      }
+    } catch (error) {
+      setStatus({ type: 'error', message: 'An error occurred. Please try again later.' });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="contact" id="contact">
       <div className="contact-wrapper">
@@ -81,10 +123,31 @@ const Contact = () => {
             </div>
           </div>
 
-          <a href="mailto:manaseevaghasiya1@gmail.com" className="contact-cta-btn">
-            <span>Start a Conversation</span>
-            <i className="fa-solid fa-paper-plane"></i>
-          </a>
+          <form className="contact-form glass-panel" onSubmit={handleSubmit}>
+            <div className="form-row">
+              <div className="form-group">
+                <input type="text" name="name" placeholder="Your Name" value={formData.name} onChange={handleChange} required />
+              </div>
+              <div className="form-group">
+                <input type="email" name="email" placeholder="Your Email" value={formData.email} onChange={handleChange} required />
+              </div>
+            </div>
+            <div className="form-group">
+              <input type="text" name="subject" placeholder="Subject" value={formData.subject} onChange={handleChange} required />
+            </div>
+            <div className="form-group">
+              <textarea name="message" placeholder="Your Message" rows="4" value={formData.message} onChange={handleChange} required></textarea>
+            </div>
+            <button type="submit" className="contact-submit-btn" disabled={isSubmitting}>
+              <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+              {!isSubmitting && <i className="fa-solid fa-paper-plane"></i>}
+            </button>
+            {status.message && (
+              <div className={`form-status ${status.type}`}>
+                {status.message}
+              </div>
+            )}
+          </form>
 
         </div>
       </div>
