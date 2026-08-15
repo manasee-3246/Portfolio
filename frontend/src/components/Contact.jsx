@@ -20,6 +20,30 @@ const Contact = () => {
     setStatus({ type: '', message: '' });
 
     try {
+      // 1. Send to EmailJS
+      const emailjsResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          service_id: 'YOUR_SERVICE_ID', // TODO: REPLACE WITH YOUR SERVICE ID
+          template_id: 'YOUR_TEMPLATE_ID', // TODO: REPLACE WITH YOUR TEMPLATE ID
+          user_id: 'YOUR_PUBLIC_KEY', // TODO: REPLACE WITH YOUR PUBLIC KEY
+          template_params: {
+            name: formData.name,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+          }
+        })
+      });
+
+      if (!emailjsResponse.ok) {
+        throw new Error('Failed to send email via EmailJS');
+      }
+
+      // 2. Save to our MongoDB Backend
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -34,7 +58,7 @@ const Contact = () => {
         setStatus({ type: 'success', message: 'Message sent successfully!' });
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
-        setStatus({ type: 'error', message: data.error || 'Failed to send message.' });
+        setStatus({ type: 'error', message: data.error || 'Failed to save message.' });
       }
     } catch (error) {
       setStatus({ type: 'error', message: 'An error occurred. Please try again later.' });
